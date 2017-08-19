@@ -43,3 +43,20 @@ http.get(process.argv[2], function (response) {
 });
 
 */
+
+//ALTERNATE SOLUTION
+/*
+let http = require("http");
+let allData = "";
+
+http.get(process.argv[2], function callback (response) {
+  response.setEncoding("utf8");
+  response.on("data", function(data){
+    allData = allData + data;
+})
+ response.on("end", function(){
+    console.log(allData.length);
+    console.log(allData);
+  });
+});
+*/
